@@ -23,4 +23,9 @@ public abstract  class Piece {
         this.x = newX;
         this.y = newY;
     }
+
+    @Override
+    public abstract Piece clone();
+
+
 }

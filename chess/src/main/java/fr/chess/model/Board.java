@@ -18,6 +18,17 @@ public class Board {
         pieces = new ArrayList<>();
         initializeBoard();
     }
+
+    public Board copyBoard() {
+        Board newBoard = new Board();
+        newBoard.pieces = new ArrayList<>();
+
+        for (Piece piece : this.pieces) {
+            newBoard.pieces.add(piece.clone()); // Assurez-vous que la classe `Piece` et ses sous-classes implémentent `clone()`
+        }
+        return newBoard;
+    }
+
     public void initializeBoard() {
         // Ajouter les pions
         for (int i = 0; i < 8; i++) {
